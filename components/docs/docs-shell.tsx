@@ -14,7 +14,10 @@ const navigation = [
   },
   {
     title: "Registry",
-    items: [{ href: "/docs/components", label: "Component catalogue" }],
+    items: [
+      { href: "/docs/components", label: "Component catalogue" },
+      { href: "/docs/components/async-state", label: "AsyncState" },
+    ],
   },
 ] as const
 

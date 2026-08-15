@@ -22,7 +22,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://elsecase.dev"),
+  metadataBase: new URL("https://elsecase.vercel.app"),
   title: {
     default: "Elsecase — React patterns beyond the happy path",
     template: "%s · Elsecase",

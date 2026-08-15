@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 
 const components = [
-  ["AsyncState", "Milestone 2", "Async content and recovery states"],
+  ["AsyncState", "Available", "Async content and recovery states"],
   [
     "ResponsiveDataExplorer",
     "Milestone 3",
@@ -36,6 +37,12 @@ export default function ComponentsPage() {
           </div>
         ))}
       </dl>
+
+      <p>
+        <Link className="text-link" href="/docs/components/async-state">
+          Open the AsyncState documentation
+        </Link>
+      </p>
     </article>
   )
 }

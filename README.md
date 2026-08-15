@@ -7,22 +7,49 @@ conditions that are often left until the end: loading, empty data, request
 errors, offline behavior, permission restrictions, responsive data workflows,
 validation failures, retry, and recovery.
 
+Live documentation: [elsecase.vercel.app](https://elsecase.vercel.app)
+
 ## Project status
 
-Milestone 1 is complete locally. The application foundation, documentation
-shell, registry pipeline, Storybook, tests, and CI workflow are in place. The
-workflow still needs its first hosted pull-request run after a remote repository
-is connected. No registry component is published yet; installation commands
-will only be documented after each item passes clean-project verification.
+`AsyncState` is the first installable registry component. The application
+foundation, documentation shell, registry pipeline, Storybook, automated tests,
+and CI workflow are operational. `ResponsiveDataExplorer` and `FormWorkflow`
+remain planned work rather than finished components.
 
-## Planned v0.1 catalogue
+## Version 0.1 catalogue
 
-- `AsyncState`
-- `ResponsiveDataExplorer`
-- `FormWorkflow`
+- `AsyncState` — available
+- `ResponsiveDataExplorer` — planned
+- `FormWorkflow` — planned
 
 No additional registry items will be added before these three meet their release
 criteria.
+
+## Install AsyncState
+
+```bash
+pnpm dlx shadcn@latest add https://elsecase.vercel.app/r/async-state.json
+```
+
+The command copies editable source into the consuming project. It does not add
+an Elsecase runtime dependency.
+
+To use the shorter namespace command, add this registry mapping to the consuming
+project's `components.json`:
+
+```json
+{
+  "registries": {
+    "@elsecase": "https://elsecase.vercel.app/r/{name}.json"
+  }
+}
+```
+
+Then run:
+
+```bash
+pnpm dlx shadcn@latest add @elsecase/async-state
+```
 
 ## Local development
 
@@ -54,14 +81,13 @@ pnpm test:e2e
 
 ## Registry architecture
 
-Elsecase uses one Next.js application. Registry source will live beside the
-documentation and be compiled into shadcn-compatible JSON under `public/r`.
+Elsecase uses one Next.js application. Registry source lives beside the
+documentation and is compiled into shadcn-compatible JSON under `public/r`.
 Consumers receive editable source code instead of a proprietary runtime
 dependency.
 
-The public registry alias is `@elsecase`. It is reserved in `components.json`,
-but component commands are intentionally withheld until the corresponding item
-passes installation verification.
+The public registry alias is `@elsecase`, mapped to
+`https://elsecase.vercel.app/r/{name}.json`.
 
 ## Technology
 
@@ -75,8 +101,8 @@ narrow; discuss additions before implementing them.
 
 ## Roadmap
 
-1. Foundation and documentation shell
-2. `AsyncState`
+1. Foundation and documentation shell — complete
+2. `AsyncState` — available
 3. `ResponsiveDataExplorer`
 4. `FormWorkflow`
 5. Documentation, installation verification, and v0.1 release

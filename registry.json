@@ -1,6 +1,20 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "elsecase",
-  "homepage": "https://elsecase.dev",
-  "items": []
+  "homepage": "https://elsecase.vercel.app",
+  "items": [
+    {
+      "name": "async-state",
+      "type": "registry:component",
+      "title": "AsyncState",
+      "description": "A declarative boundary for loading, refreshing, empty, error, offline, forbidden, and successful content.",
+      "files": [
+        {
+          "path": "registry/async-state/async-state.tsx",
+          "type": "registry:component",
+          "target": "components/async-state.tsx"
+        }
+      ]
+    }
+  ]
 }

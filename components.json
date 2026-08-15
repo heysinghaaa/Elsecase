@@ -19,6 +19,6 @@
     "hooks": "@/hooks"
   },
   "registries": {
-    "@elsecase": "https://elsecase.dev/r/{name}.json"
+    "@elsecase": "https://elsecase.vercel.app/r/{name}.json"
   }
 }
