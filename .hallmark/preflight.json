@@ -1,0 +1,17 @@
+{
+  "date": "2026-08-16",
+  "signals": {
+    "fontStack": null,
+    "palette": null,
+    "motion": "motion-cut",
+    "spacing": null,
+    "framework": null
+  },
+  "preserve": [],
+  "introduce": [
+    "Next.js App Router",
+    "custom OKLCH tokens",
+    "4px spacing scale",
+    "restrained state motion"
+  ]
+}

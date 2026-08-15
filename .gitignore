@@ -1,0 +1,26 @@
+# dependencies
+/node_modules
+
+# Next.js
+/.next
+/out
+
+# testing and stories
+/coverage
+/storybook-static
+/playwright-report
+/test-results
+
+# registry build output
+/public/r
+
+# local files
+.DS_Store
+*.local
+
+# environment
+.env*
+!.env.example
+
+# TypeScript
+*.tsbuildinfo

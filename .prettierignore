@@ -1,0 +1,7 @@
+.next
+node_modules
+public/r
+storybook-static
+playwright-report
+test-results
+pnpm-lock.yaml
