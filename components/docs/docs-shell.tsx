@@ -21,6 +21,7 @@ const navigation = [
         href: "/docs/components/data-explorer",
         label: "ResponsiveDataExplorer",
       },
+      { href: "/docs/components/form-workflow", label: "FormWorkflow" },
     ],
   },
 ] as const

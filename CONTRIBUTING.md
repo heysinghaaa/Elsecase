@@ -1,9 +1,9 @@
 # Contributing to Elsecase
 
-Elsecase is currently building toward v0.1. Contributions should improve the
-three planned registry workflows, documentation, accessibility, tests, or the
-registry toolchain. New component proposals belong after v0.1 unless they fix a
-release blocker.
+Elsecase v0.1 contains three registry workflows. Contributions should improve
+those workflows, documentation, accessibility, tests, or the registry toolchain.
+New component proposals belong to the post-v0.1 roadmap and should be discussed
+before implementation.
 
 ## Development workflow
 

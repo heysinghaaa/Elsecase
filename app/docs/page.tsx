@@ -16,10 +16,11 @@ export default function DocsPage() {
       </p>
 
       <div className="notice">
-        <strong>Foundation status</strong>
+        <strong>Version 0.1 catalogue is available</strong>
         <p>
-          The documentation shell and registry contract are being established.
-          Component source will be published one milestone at a time.
+          AsyncState, ResponsiveDataExplorer, and FormWorkflow install as
+          editable source through the shadcn CLI. Each page includes a live,
+          deterministic simulator and its public command.
         </p>
       </div>
 
@@ -32,9 +33,9 @@ export default function DocsPage() {
 
       <h2>What does not belong here</h2>
       <p>
-        Version 0.1 will not include authentication, persistence, paid plans, AI
-        generation, framework adapters, or more than the three planned registry
-        items.
+        Version 0.1 does not include authentication, persistence, paid plans, AI
+        generation, framework adapters, or low-level visual primitives. Those
+        remain application or shadcn/ui concerns.
       </p>
     </article>
   )

@@ -8,7 +8,7 @@ const components = [
     "Available",
     "Responsive data-management workflows",
   ],
-  ["FormWorkflow", "Milestone 4", "Validated and recoverable forms"],
+  ["FormWorkflow", "Available", "Validated and recoverable forms"],
 ] as const
 
 export const metadata: Metadata = {
@@ -45,6 +45,10 @@ export default function ComponentsPage() {
         <br />
         <Link className="text-link" href="/docs/components/data-explorer">
           Open the ResponsiveDataExplorer documentation
+        </Link>
+        <br />
+        <Link className="text-link" href="/docs/components/form-workflow">
+          Open the FormWorkflow documentation
         </Link>
       </p>
     </article>

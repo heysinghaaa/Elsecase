@@ -11,16 +11,15 @@ Live documentation: [elsecase.vercel.app](https://elsecase.vercel.app)
 
 ## Project status
 
-`AsyncState` and `ResponsiveDataExplorer` are installable registry components.
-The application foundation, documentation shell, registry pipeline, Storybook,
-automated tests, and CI workflow are operational. `FormWorkflow` remains planned
-work rather than a finished component.
+`AsyncState`, `ResponsiveDataExplorer`, and `FormWorkflow` are installable
+registry components. The application foundation, documentation shell, registry
+pipeline, Storybook, automated tests, and CI workflow are operational.
 
 ## Version 0.1 catalogue
 
 - `AsyncState` — available
 - `ResponsiveDataExplorer` — available
-- `FormWorkflow` — planned
+- `FormWorkflow` — available
 
 No additional registry items will be added before these three meet their release
 criteria.
@@ -65,6 +64,19 @@ is:
 pnpm dlx shadcn@latest add @elsecase/data-explorer
 ```
 
+## Install FormWorkflow
+
+```bash
+pnpm dlx shadcn@latest add https://elsecase.vercel.app/r/form-workflow.json
+```
+
+The registry item installs React Hook Form, the Zod resolver, and Zod. With the
+namespace mapping above, the shorter command is:
+
+```bash
+pnpm dlx shadcn@latest add @elsecase/form-workflow
+```
+
 ## Local development
 
 ```bash
@@ -103,6 +115,10 @@ dependency.
 The public registry alias is `@elsecase`, mapped to
 `https://elsecase.vercel.app/r/{name}.json`.
 
+Read the [architecture](./docs/architecture.md), [technical case study](./docs/case-study.md),
+and [release evidence](./docs/release-evidence.md) for the design decisions and
+quality contract. Release changes are recorded in the [changelog](./CHANGELOG.md).
+
 ## Technology
 
 Next.js App Router, React, strict TypeScript, Tailwind CSS, shadcn/ui, Vitest,
@@ -118,8 +134,8 @@ narrow; discuss additions before implementing them.
 1. Foundation and documentation shell — complete
 2. `AsyncState` — available
 3. `ResponsiveDataExplorer` — available
-4. `FormWorkflow`
-5. Documentation, installation verification, and v0.1 release
+4. `FormWorkflow` — available
+5. Documentation, installation verification, and v0.1 release — complete
 
 ## License
 

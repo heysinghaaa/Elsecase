@@ -14,8 +14,23 @@ const destinations = [
   },
   {
     label: "Component catalogue",
-    detail: "v0.1 scope",
+    detail: "Three workflows",
     href: "/docs/components",
+  },
+  {
+    label: "AsyncState",
+    detail: "Async boundaries",
+    href: "/docs/components/async-state",
+  },
+  {
+    label: "ResponsiveDataExplorer",
+    detail: "Data workflows",
+    href: "/docs/components/data-explorer",
+  },
+  {
+    label: "FormWorkflow",
+    detail: "Recoverable forms",
+    href: "/docs/components/form-workflow",
   },
 ] as const
 

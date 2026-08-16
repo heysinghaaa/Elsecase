@@ -32,6 +32,24 @@
           "target": "components/data-explorer.tsx"
         }
       ]
+    },
+    {
+      "name": "form-workflow",
+      "type": "registry:component",
+      "title": "FormWorkflow",
+      "description": "A validated, recoverable form workflow with server errors, autosave, unsaved-change warnings, and multi-step flows.",
+      "dependencies": [
+        "@hookform/resolvers@^5.8.0",
+        "react-hook-form@^7.85.0",
+        "zod@^4.4.3"
+      ],
+      "files": [
+        {
+          "path": "registry/form-workflow/form-workflow.tsx",
+          "type": "registry:component",
+          "target": "components/form-workflow.tsx"
+        }
+      ]
     }
   ]
 }
