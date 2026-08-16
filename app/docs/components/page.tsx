@@ -5,7 +5,7 @@ const components = [
   ["AsyncState", "Available", "Async content and recovery states"],
   [
     "ResponsiveDataExplorer",
-    "Milestone 3",
+    "Available",
     "Responsive data-management workflows",
   ],
   ["FormWorkflow", "Milestone 4", "Validated and recoverable forms"],
@@ -41,6 +41,10 @@ export default function ComponentsPage() {
       <p>
         <Link className="text-link" href="/docs/components/async-state">
           Open the AsyncState documentation
+        </Link>
+        <br />
+        <Link className="text-link" href="/docs/components/data-explorer">
+          Open the ResponsiveDataExplorer documentation
         </Link>
       </p>
     </article>

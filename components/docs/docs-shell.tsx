@@ -17,6 +17,10 @@ const navigation = [
     items: [
       { href: "/docs/components", label: "Component catalogue" },
       { href: "/docs/components/async-state", label: "AsyncState" },
+      {
+        href: "/docs/components/data-explorer",
+        label: "ResponsiveDataExplorer",
+      },
     ],
   },
 ] as const

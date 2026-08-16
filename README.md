@@ -11,15 +11,15 @@ Live documentation: [elsecase.vercel.app](https://elsecase.vercel.app)
 
 ## Project status
 
-`AsyncState` is the first installable registry component. The application
-foundation, documentation shell, registry pipeline, Storybook, automated tests,
-and CI workflow are operational. `ResponsiveDataExplorer` and `FormWorkflow`
-remain planned work rather than finished components.
+`AsyncState` and `ResponsiveDataExplorer` are installable registry components.
+The application foundation, documentation shell, registry pipeline, Storybook,
+automated tests, and CI workflow are operational. `FormWorkflow` remains planned
+work rather than a finished component.
 
 ## Version 0.1 catalogue
 
 - `AsyncState` — available
-- `ResponsiveDataExplorer` — planned
+- `ResponsiveDataExplorer` — available
 - `FormWorkflow` — planned
 
 No additional registry items will be added before these three meet their release
@@ -49,6 +49,20 @@ Then run:
 
 ```bash
 pnpm dlx shadcn@latest add @elsecase/async-state
+```
+
+## Install ResponsiveDataExplorer
+
+```bash
+pnpm dlx shadcn@latest add https://elsecase.vercel.app/r/data-explorer.json
+```
+
+The registry item installs its AsyncState dependency and the compatible
+TanStack Table version. With the namespace mapping above, the shorter command
+is:
+
+```bash
+pnpm dlx shadcn@latest add @elsecase/data-explorer
 ```
 
 ## Local development
@@ -103,7 +117,7 @@ narrow; discuss additions before implementing them.
 
 1. Foundation and documentation shell — complete
 2. `AsyncState` — available
-3. `ResponsiveDataExplorer`
+3. `ResponsiveDataExplorer` — available
 4. `FormWorkflow`
 5. Documentation, installation verification, and v0.1 release
 
