@@ -1,0 +1,75 @@
+name: Bug report
+description: Report a reproducible problem in an Elsecase workflow, registry item, or documentation page.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Elsecase. Please reduce the problem to the smallest reproducible case you can.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - AsyncState
+        - ResponsiveDataExplorer
+        - FormWorkflow
+        - Registry installation
+        - Documentation website
+        - Tooling or CI
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Elsecase version or registry URL
+      placeholder: v0.1.0 or https://elsecase.vercel.app/r/...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction
+      description: Link a minimal repository or provide the smallest code sample and exact steps.
+      placeholder: |
+        1. Install...
+        2. Render...
+        3. Interact with...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Include browser, operating system, React, Next.js, and shadcn CLI versions where relevant.
+      placeholder: Chrome 140, macOS 15, React 19, Next.js 16
+    validations:
+      required: true
+  - type: textarea
+    id: accessibility
+    attributes:
+      label: Accessibility impact
+      description: Describe any keyboard, focus, screen-reader, contrast, motion, or touch impact.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for this problem.
+          required: true
+        - label: I removed private data, credentials, and proprietary source from the reproduction.
+          required: true

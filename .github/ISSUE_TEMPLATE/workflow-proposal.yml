@@ -1,0 +1,52 @@
+name: Workflow proposal
+description: Propose a reusable production workflow or a focused improvement to an existing one.
+title: "[Proposal]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Elsecase adds workflows only when the failure states, ownership boundaries, and accessibility behavior are clear. Start with the product problem, not a component API.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Recurring product problem
+      description: What do application teams repeatedly have to rebuild?
+    validations:
+      required: true
+  - type: textarea
+    id: states
+    attributes:
+      label: Required states and recovery paths
+      description: List loading, empty, error, offline, permission, retry, partial-success, or other relevant states.
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: Ownership boundaries
+      description: What should Elsecase own, and what must remain under the consuming application's control?
+    validations:
+      required: true
+  - type: textarea
+    id: accessibility
+    attributes:
+      label: Accessibility and responsive behavior
+      description: Describe keyboard, focus, announcement, motion, touch, and narrow-screen requirements.
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Existing examples
+      description: Link products, libraries, standards, or prior implementations that clarify the need.
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This is a reusable workflow rather than an application-specific feature.
+          required: true
+        - label: I am willing to refine the contract before implementation begins.
+          required: true

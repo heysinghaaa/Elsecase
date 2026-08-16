@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Usage question or design discussion
+    url: https://github.com/heysinghaaa/Elsecase/discussions
+    about: Ask for implementation help or discuss an idea before proposing code.
+  - name: Security vulnerability
+    url: https://github.com/heysinghaaa/Elsecase/security/advisories/new
+    about: Report security problems privately instead of opening a public issue.

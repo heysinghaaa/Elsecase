@@ -1,81 +1,94 @@
 # Elsecase
 
-Production-ready React patterns for every else case.
+Production-ready React workflows for every else case.
 
-Elsecase is an open-source, shadcn-compatible registry focused on application
-conditions that are often left until the end: loading, empty data, request
-errors, offline behavior, permission restrictions, responsive data workflows,
-validation failures, retry, and recovery.
+[Live documentation](https://elsecase.vercel.app) ·
+[Component catalogue](https://elsecase.vercel.app/docs) ·
+[v0.1.0 release](https://github.com/heysinghaaa/Elsecase/releases/tag/v0.1.0) ·
+[MIT license](./LICENSE)
 
-Live documentation: [elsecase.vercel.app](https://elsecase.vercel.app)
+Elsecase is an open-source, shadcn-compatible registry for the application
+conditions that rarely fit inside a primitive component: loading, refreshing,
+empty data, request failures, offline behavior, permission restrictions,
+responsive data workflows, server validation, autosave, retry, and recovery.
 
-## Project status
+It installs editable source into your project. There is no Elsecase runtime
+dependency, theme lock-in, or black box between your application and the code.
 
-`AsyncState`, `ResponsiveDataExplorer`, and `FormWorkflow` are installable
-registry components. The application foundation, documentation shell, registry
-pipeline, Storybook, automated tests, and CI workflow are operational.
+## Catalogue
 
-## Version 0.1 catalogue
+| Workflow                 | Use it for                                                                                   | Documentation                                                          |
+| ------------------------ | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `AsyncState`             | Loading, refreshing, empty, error, offline, forbidden, and success states                    | [Open docs](https://elsecase.vercel.app/docs/components/async-state)   |
+| `ResponsiveDataExplorer` | Search, filters, sorting, pagination, selection, URL state, desktop tables, and mobile cards | [Open docs](https://elsecase.vercel.app/docs/components/data-explorer) |
+| `FormWorkflow`           | Client and server validation, autosave, unsaved changes, recovery, and multi-step forms      | [Open docs](https://elsecase.vercel.app/docs/components/form-workflow) |
 
-- `AsyncState` — available
-- `ResponsiveDataExplorer` — available
-- `FormWorkflow` — available
+## Install
 
-No additional registry items will be added before these three meet their release
-criteria.
-
-## Install AsyncState
+Install a component directly through the shadcn CLI:
 
 ```bash
 pnpm dlx shadcn@latest add https://elsecase.vercel.app/r/async-state.json
-```
-
-The command copies editable source into the consuming project. It does not add
-an Elsecase runtime dependency.
-
-To use the shorter namespace command, add this registry mapping to the consuming
-project's `components.json`:
-
-```json
-{
-  "registries": {
-    "@elsecase": "https://elsecase.vercel.app/r/{name}.json"
-  }
-}
-```
-
-Then run:
-
-```bash
-pnpm dlx shadcn@latest add @elsecase/async-state
-```
-
-## Install ResponsiveDataExplorer
-
-```bash
 pnpm dlx shadcn@latest add https://elsecase.vercel.app/r/data-explorer.json
-```
-
-The registry item installs its AsyncState dependency and the compatible
-TanStack Table version. With the namespace mapping above, the shorter command
-is:
-
-```bash
-pnpm dlx shadcn@latest add @elsecase/data-explorer
-```
-
-## Install FormWorkflow
-
-```bash
 pnpm dlx shadcn@latest add https://elsecase.vercel.app/r/form-workflow.json
 ```
 
-The registry item installs React Hook Form, the Zod resolver, and Zod. With the
-namespace mapping above, the shorter command is:
+The data explorer installs its `AsyncState` registry dependency. Form workflow
+installs React Hook Form, the Zod resolver, and Zod.
+
+### Use the `@elsecase` namespace
+
+Register the public URL template once:
 
 ```bash
+pnpm dlx shadcn@latest registry add @elsecase=https://elsecase.vercel.app/r/{name}.json
+```
+
+Then install by namespace:
+
+```bash
+pnpm dlx shadcn@latest add @elsecase/async-state
+pnpm dlx shadcn@latest add @elsecase/data-explorer
 pnpm dlx shadcn@latest add @elsecase/form-workflow
 ```
+
+You can inspect a registry item before installing it:
+
+```bash
+pnpm dlx shadcn@latest view @elsecase/form-workflow
+```
+
+## Why Elsecase
+
+Primitive libraries solve visual building blocks. Elsecase focuses on the
+orchestration around them:
+
+- Distinguishing initial loading from background refresh.
+- Preserving useful content and entered values while requests are in flight.
+- Making empty data, filtered-out data, permission failures, and network errors
+  different states.
+- Keeping data tools usable on narrow screens without turning a semantic table
+  into horizontal overflow.
+- Returning server conflicts to the correct fields and a focused error summary.
+- Providing explicit retry, autosave, duplicate-request, and unsaved-change
+  behavior.
+
+The components are intentionally application-agnostic. Authentication,
+persistence, routing policy, and backend adapters remain under the consuming
+application's control.
+
+## Quality contract
+
+Elsecase v0.1 is verified with:
+
+- Strict TypeScript and ESLint.
+- 58 unit and accessibility tests with Testing Library and axe.
+- 28 Playwright checks across desktop and mobile behavior.
+- Keyboard, focus, URL-state, responsive-overflow, and recovery scenarios.
+- Production and Storybook builds in CI.
+- Clean installation and production builds in fresh Next.js projects.
+
+The complete evidence is documented in [release evidence](./docs/release-evidence.md).
 
 ## Local development
 
@@ -84,9 +97,7 @@ pnpm install
 pnpm dev
 ```
 
-The application runs at `http://localhost:3000`.
-
-## Quality checks
+Run the complete local quality suite:
 
 ```bash
 pnpm format:check
@@ -105,37 +116,28 @@ pnpm exec playwright install chromium webkit
 pnpm test:e2e
 ```
 
-## Registry architecture
+## Architecture
 
-Elsecase uses one Next.js application. Registry source lives beside the
-documentation and is compiled into shadcn-compatible JSON under `public/r`.
-Consumers receive editable source code instead of a proprietary runtime
-dependency.
+Registry source, documentation, examples, tests, and generated shadcn-compatible
+JSON live in one Next.js application. Consumers receive editable source rather
+than a proprietary runtime dependency.
 
-The public registry alias is `@elsecase`, mapped to
-`https://elsecase.vercel.app/r/{name}.json`.
+Read the [architecture](./docs/architecture.md),
+[technical case study](./docs/case-study.md), and
+[changelog](./CHANGELOG.md) for the design decisions and release history.
 
-Read the [architecture](./docs/architecture.md), [technical case study](./docs/case-study.md),
-and [release evidence](./docs/release-evidence.md) for the design decisions and
-quality contract. Release changes are recorded in the [changelog](./CHANGELOG.md).
+## Contributing
+
+Bug reports, accessibility findings, documentation improvements, and focused
+component refinements are welcome. Read [CONTRIBUTING.md](./CONTRIBUTING.md)
+before opening a pull request. Please discuss new workflow proposals before
+implementing them.
 
 ## Technology
 
 Next.js App Router, React, strict TypeScript, Tailwind CSS, shadcn/ui, Vitest,
-Testing Library, Playwright, axe, Storybook, pnpm, and GitHub Actions.
-
-## Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md). The scope for v0.1 is intentionally
-narrow; discuss additions before implementing them.
-
-## Roadmap
-
-1. Foundation and documentation shell — complete
-2. `AsyncState` — available
-3. `ResponsiveDataExplorer` — available
-4. `FormWorkflow` — available
-5. Documentation, installation verification, and v0.1 release — complete
+Testing Library, Playwright, axe, Storybook, React Hook Form, Zod, TanStack
+Table, pnpm, and GitHub Actions.
 
 ## License
 
